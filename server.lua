@@ -35,3 +35,11 @@ elseif Config.Core == "QB-Core" then
         end
     end
 end
+
+for k, v in pairs(Config.Fireworks) do
+	if v.command then
+		RegisterCommand(v.command, function(source, args, rawCommand)
+			TriggerClientEvent('vms_firework:startFirework', source, k)
+		end, true)
+	end
+end
