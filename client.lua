@@ -31,14 +31,6 @@ local function reqParticle(dict)
     end
 end
 
-for k, v in pairs(Config.Fireworks) do
-	if v.command then
-		RegisterCommand(v.command, function(source, args, rawCommand)
-			TriggerEvent('vms_firework:startFirework', k)
-		end)
-	end
-end
-
 local hasBox = nil
 RegisterNetEvent('vms_firework:startFirework', function(type)
 	if Config.DisableMultiplyFireworks then
